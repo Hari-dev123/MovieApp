@@ -6,12 +6,12 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import SearchIcon from '@mui/icons-material/Search';
-import { useNavigate } from 'react-router-dom'; // Corrected Import
-import { useEffect } from 'react'; // Added useEffect Import
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function SimpleBottomNavigation() {
     const [value, setValue] = React.useState(0);
-    const navigate = useNavigate(); // Corrected useHistory()
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (value === 0) {
@@ -23,7 +23,7 @@ export default function SimpleBottomNavigation() {
         } else {
             navigate('/search');
         }
-    }, [value, navigate]); // Corrected Dependency Array
+    }, [value, navigate]);
 
     return (
         <Box
@@ -42,12 +42,40 @@ export default function SimpleBottomNavigation() {
                 onChange={(event, newValue) => {
                     setValue(newValue);
                 }}
-                sx={{ backgroundColor: '#39445a',color:'white' }}
+                sx={{ backgroundColor: '#39445a' }}
             >
-                <BottomNavigationAction label="Trending" icon={<WhatshotIcon />} sx={{ color: 'white'  }} />
-                <BottomNavigationAction label="Movies" icon={<LocalMoviesIcon />} sx={{ color: 'white' }} />
-                <BottomNavigationAction label="Tv Shows" icon={<LiveTvIcon />} sx={{ color: 'white' }} />
-                <BottomNavigationAction label="Search" icon={<SearchIcon />} sx={{ color: 'white' }} />
+                <BottomNavigationAction
+                    label="Trending"
+                    icon={<WhatshotIcon />}
+                    sx={{
+                        color: 'white',
+                        '&.Mui-selected': { color: '#00FF00' }, // Bright neon green
+                    }}
+                />
+                <BottomNavigationAction
+                    label="Movies"
+                    icon={<LocalMoviesIcon />}
+                    sx={{
+                        color: 'white',
+                        '&.Mui-selected': { color: '#00FF00' },
+                    }}
+                />
+                <BottomNavigationAction
+                    label="TV Shows"
+                    icon={<LiveTvIcon />}
+                    sx={{
+                        color: 'white',
+                        '&.Mui-selected': { color: '#00FF00' },
+                    }}
+                />
+                <BottomNavigationAction
+                    label="Search"
+                    icon={<SearchIcon />}
+                    sx={{
+                        color: 'white',
+                        '&.Mui-selected': { color: '#00FF00' },
+                    }}
+                />
             </BottomNavigation>
         </Box>
     );

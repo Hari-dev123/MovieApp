@@ -8,7 +8,7 @@ const MovieItem = ({ id, poster, title, date, media_type, vote, setHoveredMovieI
     <motion.div
       initial={{ opacity: 0, filter: "blur(10px)" }} // Start blurry
       animate={{ opacity: 1, filter: "blur(0px)" }} // Fade into clear view
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeIn" }}
       className="relative w-fit bg-blue-950 rounded-xl pb-3 hover:scale-105 transition-all"
     >
 
@@ -22,7 +22,7 @@ const MovieItem = ({ id, poster, title, date, media_type, vote, setHoveredMovieI
       </div>
       <p className="text-lg sm:text-xl font-semibold pl-2">{title}</p>
       <div className="flex flex-col sm:flex-row justify-between pl-2 pr-4">
-        <p>{media_type === "tv" ? "TV series" : "Movie"}</p>
+        <p>{media_type = 'Movies'}</p>
         <p>{date}</p>
       </div>
     </motion.div>
